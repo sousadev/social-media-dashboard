@@ -1,12 +1,14 @@
 import React from 'react';
-
-import './App.css';
+import { CustomThemeProvider } from './contexts/Theme.context';
+import Dashboard from './pages/Dashboard';
+import Global from './Theme/global';
 
 function App() {
   return (
-    <div className='App'>
-      <header className='App-header'></header>
-    </div>
+    <CustomThemeProvider>
+      <Global />
+      <Dashboard />
+    </CustomThemeProvider>
   );
 }
 
