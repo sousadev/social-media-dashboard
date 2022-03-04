@@ -14,10 +14,17 @@ export interface ThemeGlobalData {
 interface Theme {
   name: string;
   colors: {
-    primary: string;
-    black: string;
-    background: string;
-    border: string;
+    white: string;
+    bg: string;
+    cardColor: string;
+    activeCardColor: string;
+    twitter: string;
+    facebook: string;
+    instaOrange: string;
+    instaRed: string;
+    youtube: string;
+    red: string;
+    green: string;
   };
 }
 

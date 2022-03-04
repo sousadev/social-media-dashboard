@@ -14,12 +14,12 @@ export default createGlobalStyle`
   }
   body {
     width: 100%;
-    background: ${(props: ThemeGlobalData) => props.theme.colors.primary};
+    background: ${(props: ThemeGlobalData) => props.theme.colors.bg};
   }
   h1 {
     width: 100%;
     margin: 50px 0;
     text-align: center;
-    color: ${(props: ThemeGlobalData) => props.theme.colors.black};
+    color: ${(props: ThemeGlobalData) => props.theme.colors.white};
   }
 `;
