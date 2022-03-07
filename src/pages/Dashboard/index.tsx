@@ -9,7 +9,7 @@ import { BigCardFacebook } from '../../components/Cards/BigCardFacebook';
 import { BigCardInstagram } from '../../components/Cards/BigCardInstagram';
 import { BigCardYoutube } from '../../components/Cards/BigCardYoutube';
 import SwitchReact from 'react-switch';
-import { TextH1 } from '../../components/Header/styles';
+import { TextH1, TextH1Overview } from '../../components/Header/styles';
 import { SmallCard } from '../../components/Cards/SmallCard';
 
 // import { Container } from './styles';
@@ -146,7 +146,7 @@ const Dashboard: React.FC = () => {
         />
       </Main>
       <TextSection>
-        <TextH1>Overview - Today</TextH1>
+        <TextH1Overview>Overview - Today</TextH1Overview>
       </TextSection>
 
       <Section>

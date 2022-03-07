@@ -3,6 +3,7 @@ import { ThemeGlobalData } from '../../../contexts/Theme.context';
 
 export const BigCardStyled = styled.div`
   display: flex;
+  flex: 1;
   /* border: 1px solid red; */
   border-radius: 5px;
   background-color: ${(props: ThemeGlobalData) => props.theme.colors.cardColor};
@@ -17,6 +18,7 @@ export const BigCardStyled = styled.div`
 
 export const BigCardTwitterStyled = styled.div`
   display: flex;
+  flex: 1;
   /* border: 1px solid red; */
   flex-direction: column;
   @media (max-width: 640px) {
@@ -30,6 +32,7 @@ export const BigCardTwitterStyled = styled.div`
   border-top: 5px solid
     ${(props: ThemeGlobalData) => props.theme.colors.twitter};
   background-color: ${(props: ThemeGlobalData) => props.theme.colors.cardColor};
+  min-width: 280px;
   width: 280px;
   height: 260px;
 
@@ -77,12 +80,8 @@ export const TwitterRatingStyled = styled.div`
   display: flex;
   flex: 1;
 
-  @media (min-width: 640px) {
-    flex-direction: row;
-  }
-  @media (max-width: 639px) {
-    flex-direction: column;
-  }
+  padding-top: 10px;
+  padding-bottom: 10px;
 
   justify-content: center;
   align-items: center;

@@ -17,6 +17,7 @@ export const BigCardStyled = styled.div`
 
 export const BigCardFacebookStyled = styled.div`
   display: flex;
+  flex: 1;
   /* border: 1px solid red; */
   flex-direction: column;
   @media (max-width: 640px) {
@@ -30,6 +31,7 @@ export const BigCardFacebookStyled = styled.div`
   border-top: 5px solid
     ${(props: ThemeGlobalData) => props.theme.colors.facebook};
   background-color: ${(props: ThemeGlobalData) => props.theme.colors.cardColor};
+  min-width: 280px;
   width: 280px;
   height: 260px;
 
@@ -77,12 +79,8 @@ export const FacebookRatingStyled = styled.div`
   display: flex;
   flex: 1;
 
-  @media (min-width: 640px) {
-    flex-direction: row;
-  }
-  @media (max-width: 639px) {
-    flex-direction: column;
-  }
+  padding-top: 10px;
+  padding-bottom: 10px;
 
   justify-content: center;
   align-items: center;
