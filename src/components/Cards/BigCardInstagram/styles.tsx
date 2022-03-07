@@ -22,7 +22,8 @@ export const BigCardInstagramStyled = styled.div`
   @media (max-width: 640px) {
     flex: 1;
     width: 100%;
-    padding: 20px;
+    /* min-width: 300px; */
+    padding: 10px;
   }
 
   border-radius: 5px;
@@ -49,6 +50,7 @@ export const BigCardInstagramStyled = styled.div`
 export const InstagramSocialStyled = styled.div`
   display: flex;
   flex: 1;
+  width: 100%;
 
   justify-content: center;
   align-items: center;

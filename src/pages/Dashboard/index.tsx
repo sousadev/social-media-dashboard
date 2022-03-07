@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 
 import Header from '../../components/Header';
 import { useTheme } from '../../contexts/Theme.context';
-import { ThemeContext } from 'styled-components';
 
 import { Content, Main, Section, TextSection } from './styles';
 import { BigCardTwitter } from '../../components/Cards/BigCardTwitter';
@@ -17,57 +16,132 @@ import { SmallCard } from '../../components/Cards/SmallCard';
 
 const Dashboard: React.FC = () => {
   const { toggleTheme } = useTheme();
-  const { name: theme } = useContext(ThemeContext);
-  const [switchState, setSwitchState] = useState(theme);
+
   const [checked, setChecked] = useState(false);
 
   const handleToggleTheme = () => {
     toggleTheme();
-    setSwitchState(theme);
     setChecked(!checked);
   };
 
-  useEffect(() => {
-    setSwitchState(theme);
-  }, [theme]);
+  const facebookData = {
+    username: '@nathanf',
+    followers: 1987,
+    nrFollow: 12,
+  };
+  const twitterData = {
+    username: '@nathanf',
+    followers: 1044,
+    nrFollow: 99,
+  };
+  const instagramData = {
+    username: '@realnathanf',
+    followers: '11k',
+    nrFollow: 1099,
+  };
+  const youtubeData = {
+    username: 'Nathan F.',
+    followers: 8239,
+    nrFollow: 144,
+  };
+
+  const overviewData = [
+    {
+      information: 'Page View',
+      social: 'facebook',
+      follow: 87,
+      percent: '3%',
+      icon: 'up',
+    },
+    {
+      information: 'Likes',
+      social: 'facebook',
+      follow: 52,
+      percent: '3%',
+      icon: 'down',
+    },
+    {
+      information: 'Likes',
+      social: 'instagram',
+      follow: 5462,
+      percent: '2257%',
+      icon: 'up',
+    },
+    {
+      information: 'Profile Views',
+      social: 'instagram',
+      follow: '52k',
+      percent: '1375%',
+      icon: 'up',
+    },
+    {
+      information: 'Retweets',
+      social: 'twitter',
+      follow: 117,
+      percent: '303%',
+      icon: 'up',
+    },
+    {
+      information: 'Likes',
+      social: 'twitter',
+      follow: 507,
+      percent: '553%',
+      icon: 'up',
+    },
+    {
+      information: 'Likes',
+      social: 'youtube',
+      follow: 107,
+      percent: '19%',
+      icon: 'down',
+    },
+    {
+      information: 'Total Views',
+      social: 'youtube',
+      follow: 1407,
+      percent: '12%',
+      icon: 'down',
+    },
+  ];
 
   return (
     <Content>
-      <Header nrFollowers={23}>
+      <Header nrFollowers={'23,004'}>
         <span>Dark Mode </span>
 
         <SwitchReact
           checkedIcon={false}
+          uncheckedIcon={false}
           checked={checked}
           onChange={handleToggleTheme}
         />
       </Header>
 
       <Main>
-        <BigCardTwitter
-          followersToday={12}
-          nrFollowers={3444}
-          username='@sousadev'
+        <BigCardFacebook
+          followersToday={facebookData.nrFollow}
+          nrFollowers={facebookData.followers}
+          username={facebookData.username}
           icon='down'
         />
-        <BigCardFacebook
-          followersToday={34}
-          nrFollowers={340}
-          username='@sousadev'
+        <BigCardTwitter
+          followersToday={twitterData.nrFollow}
+          nrFollowers={twitterData.followers}
+          username={twitterData.username}
           icon='up'
         />
 
         <BigCardInstagram
-          followersToday={10}
-          nrFollowers={4455}
-          username='@sousadev'
+          followersToday={instagramData.nrFollow}
+          nrFollowers={instagramData.followers}
+          username={instagramData.username}
           icon='up'
         />
 
         <BigCardYoutube
-          followersToday={34}
-          nrFollowers={2340}
-          username='@italo'
+          followersToday={youtubeData.nrFollow}
+          nrFollowers={youtubeData.followers}
+          username={youtubeData.username}
           icon='down'
         />
       </Main>
@@ -76,41 +150,15 @@ const Dashboard: React.FC = () => {
       </TextSection>
 
       <Section>
-        <SmallCard
-          social='twitter'
-          followersToday={'45k'}
-          percent='12%'
-          icon='down'
-          information='Page Views'
-        />
-        <SmallCard
-          social='twitter'
-          followersToday={'45k'}
-          percent='12%'
-          icon='down'
-          information='Page Views'
-        />
-        <SmallCard
-          social='twitter'
-          followersToday={'45k'}
-          percent='12%'
-          icon='down'
-          information='Page Views'
-        />
-        <SmallCard
-          social='twitter'
-          followersToday={'45k'}
-          percent='12%'
-          icon='down'
-          information='Page Views'
-        />
-        <SmallCard
-          social='twitter'
-          followersToday={'45k'}
-          percent='12%'
-          icon='down'
-          information='Page Views'
-        />
+        {overviewData.map((i) => (
+          <SmallCard
+            social={i.social}
+            followersToday={i.follow}
+            percent={i.percent}
+            icon={i.icon}
+            information={i.information}
+          />
+        ))}
       </Section>
     </Content>
   );

@@ -25,9 +25,9 @@ export const Main = styled.div`
   }
   @media screen and (max-width: 640px) {
     flex-direction: column;
-    flex: 1;
+
     width: 100%;
-    padding: 40px;
+    padding: 10px;
   }
   gap: 30px;
 `;
@@ -36,17 +36,17 @@ export const Section = styled.div`
   display: flex;
   flex: 1;
   flex-wrap: wrap;
-  margin-bottom: 20px;
-  overflow: hidden;
+
   @media (min-width: 641px) {
     flex-direction: row;
     padding-top: 30px;
+    margin-bottom: 20px;
   }
   @media screen and (max-width: 640px) {
     flex-direction: column;
     flex: 1;
     width: 100%;
-    padding: 40px;
+    padding: 10px;
   }
   gap: 30px;
 `;

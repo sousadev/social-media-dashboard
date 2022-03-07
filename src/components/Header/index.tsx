@@ -11,7 +11,7 @@ import {
 
 interface HeaderProps {
   children: any;
-  nrFollowers: number;
+  nrFollowers: string;
 }
 
 const Header: React.FC<HeaderProps> = ({ children, nrFollowers }) => {

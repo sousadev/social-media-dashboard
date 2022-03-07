@@ -18,7 +18,7 @@ import iconUp from '../../../assets/icon-up.svg';
 interface BigCardInstagramProps {
   icon: string;
   username: string;
-  nrFollowers: number;
+  nrFollowers: number | string;
   followersToday: number;
 }
 
