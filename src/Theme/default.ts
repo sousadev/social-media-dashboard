@@ -1,8 +1,9 @@
 export const lightTheme = {
   name: 'light',
   colors: {
-    white: '#ffffff',
+    white: '#000',
     bg: '#f8f9fe',
+    gray: '#a9a9a9',
     cardColor: '#f0f3fa',
     activeCardColor: '#e1e3f0',
     twitter: '#1fa3f5',
@@ -18,8 +19,9 @@ export const lightTheme = {
 export const darkTheme = {
   name: 'dark',
   colors: {
-    white: '#ffffff',
+    white: '#fff',
     bg: '#20222F',
+    gray: '#a9a9a9',
     cardColor: '#252B43',
     activeCardColor: '#333A56',
     twitter: '#1fa3f5',

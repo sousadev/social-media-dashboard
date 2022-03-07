@@ -16,6 +16,7 @@ interface Theme {
   colors: {
     white: string;
     bg: string;
+    gray: string;
     cardColor: string;
     activeCardColor: string;
     twitter: string;
@@ -34,8 +35,10 @@ export const CustomThemeProvider: React.FC = ({ children }) => {
   const toggleTheme = useCallback(() => {
     if (theme.name === 'light') {
       setTheme(darkTheme);
+      localStorage.setItem('mode', 'dark');
     } else if (theme.name === 'dark') {
       setTheme(lightTheme);
+      localStorage.setItem('mode', 'light');
     }
   }, [theme]);
 
