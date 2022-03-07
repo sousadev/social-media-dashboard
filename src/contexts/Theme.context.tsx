@@ -21,6 +21,7 @@ interface Theme {
     activeCardColor: string;
     twitter: string;
     facebook: string;
+    instagram: string;
     instaOrange: string;
     instaRed: string;
     youtube: string;

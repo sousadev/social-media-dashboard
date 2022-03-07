@@ -4,6 +4,13 @@ import { ThemeGlobalData } from '../../contexts/Theme.context';
 export const HeaderStyled = styled.header`
   display: flex;
   flex: 1;
+  width: 100%;
+  @media (min-width: 640px) {
+    flex-direction: row;
+  }
+  @media (max-width: 639px) {
+    flex-direction: column;
+  }
 
   padding: 10px;
   margin-left: 20px;

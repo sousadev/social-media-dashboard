@@ -1,0 +1,13 @@
+.textGreen{
+    font-weight: bold;
+    font-size: 12px;
+    font-family: 'Inter', sans-serif;
+    color: #60d394
+}
+
+.textRed{
+    font-weight: bold;
+    font-size: 12px;
+    font-family: 'Inter', sans-serif;
+    color: #ef233c
+}
