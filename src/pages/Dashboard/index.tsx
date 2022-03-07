@@ -2,14 +2,16 @@ import React, { useContext, useEffect, useState } from 'react';
 
 import Header from '../../components/Header';
 import { useTheme } from '../../contexts/Theme.context';
-import Switch from 'react-input-switch';
 import { ThemeContext } from 'styled-components';
-import Toggle from '../../components/Toggle/Toggle';
-import { Content, Main } from './styles';
+
+import { Content, Main, Section, TextSection } from './styles';
 import { BigCardTwitter } from '../../components/Cards/BigCardTwitter';
 import { BigCardFacebook } from '../../components/Cards/BigCardFacebook';
 import { BigCardInstagram } from '../../components/Cards/BigCardInstagram';
 import { BigCardYoutube } from '../../components/Cards/BigCardYoutube';
+import SwitchReact from 'react-switch';
+import { TextH1 } from '../../components/Header/styles';
+import { SmallCard } from '../../components/Cards/SmallCard';
 
 // import { Container } from './styles';
 
@@ -17,10 +19,12 @@ const Dashboard: React.FC = () => {
   const { toggleTheme } = useTheme();
   const { name: theme } = useContext(ThemeContext);
   const [switchState, setSwitchState] = useState(theme);
+  const [checked, setChecked] = useState(false);
 
   const handleToggleTheme = () => {
     toggleTheme();
     setSwitchState(theme);
+    setChecked(!checked);
   };
 
   useEffect(() => {
@@ -32,14 +36,9 @@ const Dashboard: React.FC = () => {
       <Header nrFollowers={23}>
         <span>Dark Mode </span>
 
-        <Switch
-          value={switchState}
-          on={'light'}
-          off={'dark'}
-          styles={{
-            backgroundColor:
-              'linear-gradient(97deg, rgba(34,97,195,1) 0%, rgba(45,253,170,1) 100%)',
-          }}
+        <SwitchReact
+          checkedIcon={false}
+          checked={checked}
           onChange={handleToggleTheme}
         />
       </Header>
@@ -72,8 +71,47 @@ const Dashboard: React.FC = () => {
           icon='down'
         />
       </Main>
+      <TextSection>
+        <TextH1>Overview - Today</TextH1>
+      </TextSection>
 
-      {/* <button onClick={handleToggleTheme}>Texto</button> */}
+      <Section>
+        <SmallCard
+          social='twitter'
+          followersToday={'45k'}
+          percent='12%'
+          icon='down'
+          information='Page Views'
+        />
+        <SmallCard
+          social='twitter'
+          followersToday={'45k'}
+          percent='12%'
+          icon='down'
+          information='Page Views'
+        />
+        <SmallCard
+          social='twitter'
+          followersToday={'45k'}
+          percent='12%'
+          icon='down'
+          information='Page Views'
+        />
+        <SmallCard
+          social='twitter'
+          followersToday={'45k'}
+          percent='12%'
+          icon='down'
+          information='Page Views'
+        />
+        <SmallCard
+          social='twitter'
+          followersToday={'45k'}
+          percent='12%'
+          icon='down'
+          information='Page Views'
+        />
+      </Section>
     </Content>
   );
 };
